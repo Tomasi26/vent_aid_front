@@ -4,15 +4,15 @@ import { VentOutput } from '../model/vent-output.model';
 import {VentOutputParams, VentOutputResponse} from '../interfaces/vent-output.interfaces';
 import {Message} from '../../messages/message.model';
 
-// roles
+// vent output
 export const FETCH_VENT_OUTPUT = '[VentOutput] Fetch VentOutput';
 export const SET_VENT_OUTPUT = '[VentOutput] Set VentOutput';
 export const VENT_OUTPUT_FAILURE = '[VentOutput] VentOutput Failure';
 export const VENT_OUTPUT_SUCCESS = '[VentOutput] VentOutput Success';
 export const VENT_OUTPUT_CLEAN = '[VentOutput] VentOutput Clean';
-export const VENT_OUTPUT_DUMMY = '[VentOutput] Role Dummy';
+export const VENT_OUTPUT_DUMMY = '[VentOutput] VentOutput Dummy';
 
-// roles actions
+// vent output actions
 export class FetchVentOutput implements Action {
   readonly type = FETCH_VENT_OUTPUT;
 

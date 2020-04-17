@@ -37,7 +37,7 @@ import {Message} from '../../messages/message.model';
 export class VentOutputPanelComponent implements OnInit, AfterViewInit, AfterContentInit, OnDestroy {
 
 
-  // roles store
+  // vent output store
   ventOutput: VentOutput;
   ventOutputLoading = false;
   ventOutputError: Message = null;

@@ -18,11 +18,11 @@ export class VentOutputEffects {
 
   // read
   @Effect()
-  fetchRoles = this.actions$.pipe(
+  fetchVentOutput = this.actions$.pipe(
     ofType(VentOutputActions.FETCH_VENT_OUTPUT),
-    switchMap((fetchRolesData: VentOutputActions.FetchVentOutput) => {
+    switchMap((fetchVentOutputData: VentOutputActions.FetchVentOutput) => {
 
-      return this.ventOutputService.getVentOutput(fetchRolesData.payload.params)
+      return this.ventOutputService.getVentOutput(fetchVentOutputData.payload.params)
         .pipe(
           switchMap((ventOutputResponse: VentOutputResponse) => {
 
