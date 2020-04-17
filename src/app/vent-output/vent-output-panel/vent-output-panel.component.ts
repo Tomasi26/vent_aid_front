@@ -56,6 +56,16 @@ export class VentOutputPanelComponent implements OnInit, AfterViewInit, AfterCon
   ngOnInit() {
     // subscribe to vent output state
     this.subscribeVentOutputStateObservables();
+
+    // setting example values for the vent outputs
+    this.store.dispatch(new fromVentOutputActions.SetVentOutput({
+      output: {
+        bpm: 'BPM',
+        pressureAbsolute: 'PRESSURE_ABSOLUTE',
+        compressionPercentage: 'COMPRESSION_PERCENTAGE',
+        inspiriumPressure: 'INSPIRIUM_PRESSURE'
+      }
+    }));
   }
 
   // vent output state
@@ -110,12 +120,9 @@ export class VentOutputPanelComponent implements OnInit, AfterViewInit, AfterCon
 
 
   ngAfterViewInit() {
-
-
   }
 
   ngAfterContentInit() {
-
   }
 
   ngOnDestroy() {
