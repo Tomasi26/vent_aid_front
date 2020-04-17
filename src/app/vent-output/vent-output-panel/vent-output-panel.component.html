@@ -7,8 +7,13 @@
   <mat-label>
     <h4>Vent Output:</h4>
   </mat-label>
+  BPM: {{ventOutput.bpm}}
   <br/>
-  {{ventOutput.toString()}}
+  Pressure Absolute: {{ventOutput.pressureAbsolute}}
+  <br/>
+  Compression Percentage: {{ventOutput.compressionPercentage}}
+  <br/>
+  Inspirium Pressure: {{ventOutput.inspiriumPressure}}
   <hr/>
 
   <!-- Loading -->
@@ -16,7 +21,7 @@
     <h4>Loading</h4>
   </mat-label>
   <br/>
-  {{ventOutputLoading}}
+  {{ventOutputLoading ? 'Loading is true' : 'Loading is false'}}
   <hr/>
 
   <!-- Success -->
@@ -24,7 +29,7 @@
     <h4>Success:</h4>
   </mat-label>
   <br/>
-  {{ventOutputSuccess}}
+  {{ventOutputSuccess ? ventOutputSuccess.defaultMessage : 'There is no success message'}}
   <hr/>
 
   <!-- Loading -->
@@ -32,6 +37,6 @@
     <h4>Error:</h4>
   </mat-label>
   <br/>
-  {{ventOutputError}}
+  {{ventOutputError ? ventOutputError.defaultMessage : 'There is no error message'}}
 
 </div>
