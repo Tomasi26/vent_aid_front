@@ -8,7 +8,7 @@ export class BleScanService {
   constructor() { }
 
   init() {
-    console.log('hhhhh')
+    console.log('4444')
     document.addEventListener('deviceready', () => {
       new Promise((resolve) => {
         console.log('H');
