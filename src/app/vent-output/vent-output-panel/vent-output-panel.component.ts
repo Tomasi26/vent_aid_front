@@ -26,6 +26,16 @@ import {VentOutput} from '../model/vent-output.model';
 
 // message
 import {Message} from '../../messages/message.model';
+import {BleScanService} from '../../bluetooth-services/ble-scan.service';
+
+// tslint:disable-next-line:component-class-suffix
+class Device{
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
 
 @Component({
   selector: 'app-vent-output-panel',
@@ -33,7 +43,6 @@ import {Message} from '../../messages/message.model';
   templateUrl: 'vent-output-panel.component.html',
   encapsulation: ViewEncapsulation.None
 })
-
 export class VentOutputPanelComponent implements OnInit, AfterViewInit, AfterContentInit, OnDestroy {
 
 
@@ -46,14 +55,26 @@ export class VentOutputPanelComponent implements OnInit, AfterViewInit, AfterCon
   ventOutputLoadingSub: Subscription;
   ventOutputErrorSub: Subscription;
   ventOutputSuccessSub: Subscription;
+  devices: Device[] = [];
+
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private store: Store<fromApp.AppState>,
-    private ventOutputStore: Store<fromVentOutputState.VentOutputState>) {}
+    private ventOutputStore: Store<fromVentOutputState.VentOutputState>,
+    private bleService: BleScanService) {
+
+    this.devices.push(new Device('Tomer\'s Phone'));
+  }
+
 
   ngOnInit() {
+    //init bluetooth module
+    this.bleService.init();
+
+    // document.dispatchEvent(new Event('deviceready'));
+
     // subscribe to vent output state
     this.subscribeVentOutputStateObservables();
 
@@ -120,6 +141,7 @@ export class VentOutputPanelComponent implements OnInit, AfterViewInit, AfterCon
 
 
   ngAfterViewInit() {
+    document.dispatchEvent(new Event('deviceready'))
   }
 
   ngAfterContentInit() {
@@ -128,6 +150,10 @@ export class VentOutputPanelComponent implements OnInit, AfterViewInit, AfterCon
   ngOnDestroy() {
     // unsubscribe to vent output state
     this.unsubscribeVentOutputStateObservables();
+  }
+
+  startScan(){
+
   }
 
 }

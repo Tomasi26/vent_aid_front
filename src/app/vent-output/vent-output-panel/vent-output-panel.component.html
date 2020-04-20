@@ -1,42 +1,64 @@
+
 <div>
-
-  <h3>Panel:</h3>
-  <br/>
-
-  <!-- Vent Output -->
-  <mat-label>
-    <h4>Vent Output:</h4>
-  </mat-label>
-  BPM: {{ventOutput.bpm}}
-  <br/>
-  Pressure Absolute: {{ventOutput.pressureAbsolute}}
-  <br/>
-  Compression Percentage: {{ventOutput.compressionPercentage}}
-  <br/>
-  Inspirium Pressure: {{ventOutput.inspiriumPressure}}
-  <hr/>
-
-  <!-- Loading -->
-  <mat-label>
-    <h4>Loading</h4>
-  </mat-label>
-  <br/>
-  {{ventOutputLoading ? 'Loading is true' : 'Loading is false'}}
-  <hr/>
-
-  <!-- Success -->
-  <mat-label>
-    <h4>Success:</h4>
-  </mat-label>
-  <br/>
-  {{ventOutputSuccess ? ventOutputSuccess.defaultMessage : 'There is no success message'}}
-  <hr/>
-
-  <!-- Loading -->
-  <mat-label>
-    <h4>Error:</h4>
-  </mat-label>
-  <br/>
-  {{ventOutputError ? ventOutputError.defaultMessage : 'There is no error message'}}
+  <mat-card class="card">
+    <mat-card-header>
+<!--      <mat-card-title>Devices:</mat-card-title>-->
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngFor="let device of this.devices">
+        <mat-label>{{device.name}}</mat-label>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Scan QR</button>
+      <button mat-button (click)="this.startScan()">Scan BT</button>
+      <button mat-button>History</button>
+    </mat-card-actions>
+  </mat-card>
 
 </div>
+
+
+
+<!--<div>-->
+
+<!--  <h3>Panel:</h3>-->
+<!--  <br/>-->
+
+<!--  &lt;!&ndash; Vent Output &ndash;&gt;-->
+<!--  <mat-label>-->
+<!--    <h4>Vent Output:</h4>-->
+<!--  </mat-label>-->
+<!--  BPM: {{ventOutput.bpm}}-->
+<!--  <br/>-->
+<!--  Pressure Absolute: {{ventOutput.pressureAbsolute}}-->
+<!--  <br/>-->
+<!--  Compression Percentage: {{ventOutput.compressionPercentage}}-->
+<!--  <br/>-->
+<!--  Inspirium Pressure: {{ventOutput.inspiriumPressure}}-->
+<!--  <hr/>-->
+
+<!--  &lt;!&ndash; Loading &ndash;&gt;-->
+<!--  <mat-label>-->
+<!--    <h4>Loading</h4>-->
+<!--  </mat-label>-->
+<!--  <br/>-->
+<!--  {{ventOutputLoading ? 'Loading is true' : 'Loading is false'}}-->
+<!--  <hr/>-->
+
+<!--  &lt;!&ndash; Success &ndash;&gt;-->
+<!--  <mat-label>-->
+<!--    <h4>Success:</h4>-->
+<!--  </mat-label>-->
+<!--  <br/>-->
+<!--  {{ventOutputSuccess ? ventOutputSuccess.defaultMessage : 'There is no success message'}}-->
+<!--  <hr/>-->
+
+<!--  &lt;!&ndash; Loading &ndash;&gt;-->
+<!--  <mat-label>-->
+<!--    <h4>Error:</h4>-->
+<!--  </mat-label>-->
+<!--  <br/>-->
+<!--  {{ventOutputError ? ventOutputError.defaultMessage : 'There is no error message'}}-->
+
+<!--</div>-->

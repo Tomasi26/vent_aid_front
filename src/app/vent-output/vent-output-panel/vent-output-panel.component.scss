@@ -1,0 +1,26 @@
+.card {
+  max-width: 400px;
+  border: solid;
+  border-radius: 4px;
+  height: 400px;
+  margin: 5px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.mat-card{
+  display:flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+}
+
+.mat-card-actions{
+  flex-grow: 1;
+  overflow: auto;
+}
