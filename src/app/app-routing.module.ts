@@ -4,8 +4,11 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: '', redirectTo: '/vent', pathMatch: 'full' },
-      { path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+        { path: 'connection',
+          loadChildren: () => import('./connection/connection.module').then(connectionModule => connectionModule.ConnectionModule)},
+        { path: 'admin',
+          loadChildren: () => import('./admin/admin.module').then(adminModule => adminModule.AdminModule)}
       ],
       {onSameUrlNavigation: 'reload',
         useHash: true}

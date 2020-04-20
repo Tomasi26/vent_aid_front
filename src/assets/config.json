@@ -1,0 +1,76 @@
+{
+
+  "config": {
+
+    "modes": {
+      "cmv": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "ac": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "simv": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "pcv": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "ps": {
+        "enabled": false,
+        "readOnly": true
+      }
+    },
+
+    "sensors": {
+      "pressure": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "flow": {
+        "enabled": false,
+        "readOnly": true
+      }
+    },
+
+    "controls": {
+      "rate": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "compressionPercentage": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "maxPressure": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "inspiratoryPressure": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "peakFlow": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "ieRatio": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "trigger": {
+        "enabled": false,
+        "readOnly": true
+      },
+      "fio2": {
+        "enabled": false,
+        "readOnly": true
+      }
+    }
+
+  }
+
+}

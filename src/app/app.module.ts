@@ -18,7 +18,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MaterialModule } from './app-material.module';
 import { HeaderComponent } from './header/header.component';
 import {SharedModule} from './shared/shared.module';
-import {VentOutputModule} from './vent-output/vent-output.module';
+import {DashboardModule} from './dashboard/dashboard.module';
+import {ConfigModule} from './config/config.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {VentOutputModule} from './vent-output/vent-output.module';
   ],
   imports: [
     SharedModule,
-    VentOutputModule,
+    ConfigModule,
+    DashboardModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
