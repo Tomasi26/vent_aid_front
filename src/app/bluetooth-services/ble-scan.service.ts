@@ -8,14 +8,10 @@ export class BleScanService {
   constructor() { }
 
   init() {
-    console.log('4444')
     document.addEventListener('deviceready', () => {
       new Promise((resolve) => {
-        console.log('H');
         bluetoothle.initialize(resolve, {request: true, statusReceiver: false});
-        console.log('hh')
       }).then(this.initializeSuccess, this.handleError);
-
     });
   }
 

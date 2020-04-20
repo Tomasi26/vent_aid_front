@@ -10,7 +10,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-to-cordova": "ng build --prod --base-href . --output-path ../VentAidFront/www/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
