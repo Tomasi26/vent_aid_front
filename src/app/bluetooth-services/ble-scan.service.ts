@@ -5,17 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class BleScanService {
 
+  private foundDevices = [];
+
   constructor() { }
 
   init() {
-    console.log('4444')
     document.addEventListener('deviceready', () => {
       new Promise((resolve) => {
-        console.log('H');
         bluetoothle.initialize(resolve, {request: true, statusReceiver: false});
-        console.log('hh')
       }).then(this.initializeSuccess, this.handleError);
-
     });
   }
 
@@ -30,7 +28,7 @@ export class BleScanService {
 
       // document.getElementById('start-scan').disabled = true;
 
-      console.log('Bluetooth is not enabled:', 'status');
+      console.log('Bluetooth is not enabled:', result.status);
       console.log(result, 'status');
     }
   }
@@ -56,19 +54,18 @@ export class BleScanService {
   }
 
 
-  private foundDevices = [];
 
   startScan() {
 
-    console.log("Starting scan for devices...", "status");
+    console.log('Starting scan for devices...', 'status');
 
     this.foundDevices = [];
 
-    document.getElementById("devices").innerHTML = "";
-    document.getElementById("services").innerHTML = "";
-    document.getElementById("output").innerHTML = "";
+    document.getElementById('devices').innerHTML = '';
+    document.getElementById('services').innerHTML = '';
+    document.getElementById('output').innerHTML = '';
 
-    // if (window.cordova.platformId === "windows") {
+    // if (window.cordova.platformId === 'windows') {
     //   bluetoothle.retrieveConnected(this.retrieveConnectedSuccess, this.handleError, {});
     // }
     // else {
@@ -77,27 +74,27 @@ export class BleScanService {
   }
 
   retrieveConnectedSuccess(result) {
-    console.log("retrieveConnectedSuccess()");
+    console.log('retrieveConnectedSuccess()');
     console.log(result);
-    result.forEach(function (device) {
+    result.forEach(function(device) {
       this.addDevice(device.name, device.address);
     });
   }
 
   addDevice(name, address) {
 
-    let button = document.createElement("button");
-    button.style.width = "100%";
-    button.style.padding = "10px";
-    button.style.fontSize = "16px";
-    button.textContent = name + ": " + address;
+    let button = document.createElement('button');
+    button.style.width = '100%';
+    button.style.padding = '10px';
+    button.style.fontSize = '16px';
+    button.textContent = name + ': ' + address;
 
-    button.addEventListener("click", function () {
+    button.addEventListener('click', function() {
 
-      document.getElementById("services").innerHTML = "";
+      document.getElementById('services').innerHTML = '';
       // connect(address);
     });
 
-    document.getElementById("devices").appendChild(button);
+    document.getElementById('devices').appendChild(button);
   }
 }
