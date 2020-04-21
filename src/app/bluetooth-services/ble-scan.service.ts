@@ -12,7 +12,7 @@ export class BleScanService {
   init() {
     document.addEventListener('deviceready', () => {
       new Promise((resolve) => {
-        bluetoothle.initialize(resolve, {request: true, statusReceiver: false});
+        // bluetoothle.initialize(resolve, {request: true, statusReceiver: false});
       }).then(this.initializeSuccess, this.handleError);
     });
   }
