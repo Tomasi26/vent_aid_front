@@ -1,6 +1,19 @@
 # VentAid
 TODO
 
+## Installation
+`cd Cordova/`
+
+`npm install/`
+
+
+
+`cd ../Angular/`
+
+`npm install/`
+
+`ng run vent_aid_front:build`
+
 ## Serve Angular
 `cd Angular/`
 
