@@ -1,15 +1,11 @@
 {
-  "name": "com.ambovent.server",
-  "displayName": "VentAid",
-  "version": "1.0.0",
-  "description": "AmboVent",
-  "main": "index.js",
-  "license": "Apache-2.0",
-  "author": "Apache Cordova Team",
+  "name": "vent_aid_front",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-to-cordova": "ng build --prod --base-href . --output-path ../VentAidFront/www/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -33,9 +29,6 @@
     "@ngrx/store-devtools": "~9.1.0",
     "@popperjs/core": "~2.3.3",
     "bootstrap": "~4.4.1",
-    "cordova-browser": "^6.0.0",
-    "cordova-plugin-bluetoothle": "^4.5.10",
-    "cordova-plugin-device": "^2.0.3",
     "jquery": "~3.5.0",
     "rxjs": "~6.5.4",
     "tslib": "~1.10.0",
@@ -62,20 +55,6 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3",
-    "cordova-plugin-whitelist": "^1.3.4"
-  },
-  "keywords": [
-    "ecosystem:cordova"
-  ],
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-bluetoothle": {}
-    },
-    "platforms": [
-      "browser"
-    ]
+    "typescript": "~3.8.3"
   }
 }
