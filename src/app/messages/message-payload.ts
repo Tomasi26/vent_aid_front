@@ -1,7 +1,10 @@
 // messages
 
-import {VentOutput} from '../vent-output/model/vent-output.model';
+
+import {VentData} from '../dashboard/model/vent-data.model';
+import {VentMode} from '../dashboard/dashboard.enums';
 
 export interface MessagePayload {
-  ventOutput?: VentOutput;
+  data?: VentData;
+  mode?: VentMode;
 }

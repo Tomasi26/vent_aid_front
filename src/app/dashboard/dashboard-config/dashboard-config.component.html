@@ -1,0 +1,132 @@
+<div style="{margin: 50px;}">
+
+  <mat-card>
+
+    <mat-card-header class="d-flex">
+      <mat-card-title class="card-title d-flex">
+        <mat-form-field appearance="fill" class="d-flex">
+          <mat-select
+            [multiple]="false"
+            placeholder="Mode"
+            (selectionChange)="onModeSelect($event)">
+            <mat-option *ngFor="let mode of getModesFromConfig()" [value]="mode">
+              {{ getModeTitle(mode) }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="d-flex">
+      <form
+        [formGroup]="dashboardConfigForm"
+        (ngSubmit)="onSaveDashboardConfig($event)">
+
+<!--        tidalVolume-->
+        <div class="row" *ngIf="mode === VentMode.cmv">
+          <mat-form-field appearance="fill">
+            <mat-label>{{DASHBOARD_CONFIG_DATA.tidalVolume.name}}</mat-label>
+            <input
+              matInput
+              placeholder="{{DASHBOARD_CONFIG_DATA.tidalVolume.name}}"
+              [(ngModel)]="dashboardConfigFormValue.tidalVolume"
+              formControlName="tidalVolume"
+              type="text"/>
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+        </div>
+<!--        fio2-->
+        <div class="row" *ngIf="mode === VentMode.cmv || mode === VentMode.pcv || mode === VentMode.ps">
+          <mat-form-field appearance="fill">
+            <mat-label>{{DASHBOARD_CONFIG_DATA.fio2.name}}</mat-label>
+            <input
+              matInput
+              placeholder="{{DASHBOARD_CONFIG_DATA.fio2.name}}"
+              [(ngModel)]="dashboardConfigFormValue.fio2"
+              formControlName="fio2"
+              type="text"/>
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+        </div>
+<!--        ieRatio-->
+        <div class="row" *ngIf="mode === VentMode.cmv || mode === VentMode.pcv">
+          <mat-form-field appearance="fill">
+            <mat-label>{{DASHBOARD_CONFIG_DATA.ieRatio.name}}</mat-label>
+            <input
+              matInput
+              placeholder="{{DASHBOARD_CONFIG_DATA.ieRatio.name}}"
+              [(ngModel)]="dashboardConfigFormValue.ieRatio"
+              formControlName="ieRatio"
+              type="text"/>
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+        </div>
+<!--        inspiratoryPressure-->
+        <div class="row" *ngIf="mode === VentMode.ps || mode === VentMode.pcv">
+          <mat-form-field appearance="fill">
+            <mat-label>{{DASHBOARD_CONFIG_DATA.inspiratoryPressure.name}}</mat-label>
+            <input
+              matInput
+              placeholder="{{DASHBOARD_CONFIG_DATA.inspiratoryPressure.name}}"
+              [(ngModel)]="dashboardConfigFormValue.inspiratoryPressure"
+              formControlName="inspiratoryPressure"
+              type="text"/>
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+        </div>
+<!--        peakFlow-->
+        <div class="row" *ngIf="mode === VentMode.cmv">
+          <mat-form-field appearance="fill">
+            <mat-label>{{DASHBOARD_CONFIG_DATA.peakFlow.name}}</mat-label>
+            <input
+              matInput
+              placeholder="{{DASHBOARD_CONFIG_DATA.peakFlow.name}}"
+              [(ngModel)]="dashboardConfigFormValue.peakFlow"
+              formControlName="peakFlow"
+              type="text"/>
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+        </div>
+<!--        rate-->
+        <div class="row" *ngIf="mode === VentMode.pcv">
+          <mat-form-field appearance="fill">
+            <mat-label>{{DASHBOARD_CONFIG_DATA.rate.name}}</mat-label>
+            <input
+              matInput
+              placeholder="{{DASHBOARD_CONFIG_DATA.rate.name}}"
+              [(ngModel)]="dashboardConfigFormValue.rate"
+              formControlName="rate"
+              type="text"/>
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+        </div>
+<!--        trigger-->
+        <div class="row" *ngIf="mode === VentMode.simv || mode === VentMode.ac || mode === VentMode.pcv || mode === VentMode.ps">
+          <mat-form-field appearance="fill">
+            <mat-label>{{DASHBOARD_CONFIG_DATA.trigger.name}}</mat-label>
+            <input
+              matInput
+              placeholder="{{DASHBOARD_CONFIG_DATA.trigger.name}}"
+              [(ngModel)]="dashboardConfigFormValue.trigger"
+              formControlName="trigger"
+              type="text"/>
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+        </div>
+
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions class="d-flex">
+      <a
+        mat-stroked-button
+        (click)="onSaveDashboardConfig($event)"
+        color="primary"
+        class="ml-auto mr-auto">
+        <i class="material-icons">done</i>Next
+      </a>
+    </mat-card-actions>
+
+  </mat-card>
+
+</div>

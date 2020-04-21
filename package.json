@@ -30,10 +30,12 @@
     "@popperjs/core": "~2.3.3",
     "bootstrap": "~4.4.1",
     "jquery": "~3.5.0",
+    "lodash": "^4.17.15",
     "rxjs": "~6.5.4",
     "tslib": "~1.10.0",
-    "tslint": "~6.1.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "jquery": "~3.5.0",
+    "tslint": "~6.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.0",
@@ -43,7 +45,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "~3.3.35",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.12.36",
     "codelyzer": "~5.2.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
