@@ -1,7 +1,0 @@
-{
-  "name": "vent_aid_front",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
