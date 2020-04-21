@@ -24,7 +24,12 @@ TODO
 
 `npx cap open [platform](ios/adnroid?)`
 
+Builds is in `Cordova/Platform/ios` or `Cordova/Platform/android`
+
 ## Build Cordova
 `cd Cordova/`
 
 `cordova build [platform](ios/adnroid?)`
+
+Builds is in `Angular/ios` or `Angular/android`
+
