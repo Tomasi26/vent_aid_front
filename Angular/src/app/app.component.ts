@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 
 import * as fromApp from './store/app.reducer';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',

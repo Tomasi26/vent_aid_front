@@ -1,0 +1,8 @@
+{
+  "appId": "com.ariel.ventaid",
+  "appName": "VentAid",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

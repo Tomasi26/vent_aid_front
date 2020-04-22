@@ -46,6 +46,11 @@ Cordova/package-lock.json
 Cordova/www
 Cordova/platforms
 
+# Capacitor
+Angular/ios
+Angular/android
+Angular/www
+
 # Angular
 Angular/node_modules
 Angular/package-lock.json
