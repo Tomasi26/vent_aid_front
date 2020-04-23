@@ -2,7 +2,7 @@
 TODO
 
 ## Installation
-To install all node modules, go to Cordova folder (`cd Cordova/`) and run Node Package Manager instalation (`npm install`).
+To install all node modules, go to Cordova folder (`cd Cordova/`) and run Node Package Manager installation (`npm install`).
 Same in Angualr folder (`cd ../Angular/` and then `npm install`).
 
 Then, we need to build the Angular project for the first time before we build Capacitor's ios/android platforms: `ng run vent_aid_front:build`
