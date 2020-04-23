@@ -2,13 +2,13 @@
 TODO
 
 ## Installation
-To install all node modules, go to Cordova folder (`cd Cordova/`) and run Node Package Manager (`npm install`).
+To install all node modules, go to Cordova folder (`cd Cordova/`) and run Node Package Manager instalation (`npm install`).
 Same in Angualr folder (`cd ../Angular/` and then `npm install`).
 
 Then, we need to build the Angular project for the first time before we build Capacitor's ios/android platforms: `ng run vent_aid_front:build`
 
 ## Serve Angular
-Angular is a web application framework by google. This project is built in Angular.
+This project is built in Angular. Angular is a web application framework by google. 
 
 To build and serve the web app, just go to Angular folder (`cd Angular/`) and run `npm start` (which is equal to `ng serve --ssl`). 
 
