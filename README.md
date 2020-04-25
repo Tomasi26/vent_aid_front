@@ -1,5 +1,6 @@
 # VentAid
 TODO
+https://docs.google.com/document/d/1wkSRPfU4eXuO7JBkOvGuo8625AafuoacXpsTIoZJXU0/edit#
 
 ## Installation
 To install all node modules, go to Cordova folder (`cd Cordova/`) and run Node Package Manager installation (`npm install`).
@@ -40,7 +41,7 @@ Builds is in `Angular/ios` or `Angular/android`
 
 For more information: https://capacitor.ionicframework.com/docs/getting-started#adding-capacitor-to-an-existing-ionic-app
 
-## Build Cordova
+## Build Cordova (for BACKUP)
 You can also use Apache's Cordova to wrap the Angular project within a native app too. 
 Firstly, to add the wanted platforms, simply go to `cd Cordova/` and add the desired platforms:
 
