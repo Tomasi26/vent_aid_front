@@ -1,0 +1,21 @@
+#mode .mat-form-field-infix {
+    border-top: 0.3em solid transparent !important;
+}
+
+.mat-form-field-suffix {
+    bottom: .25em !important;
+    font-weight: bold;
+}
+
+.ventilation-mode-input {
+    mat-form-field {
+        width: 200px;
+    }
+}
+
+mat-card {
+    overflow: scroll;
+}
+mat-card::-webkit-scrollbar {
+    display: none;
+  }
