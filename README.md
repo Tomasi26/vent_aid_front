@@ -28,6 +28,14 @@ You can use Ionic's Capacitor to wrap the Angular project within a native app. T
 
 `npx cap add [platform](ios/adnroid?)`
 
+To generate updated .apk or Xcode project:
+
+`ng run vent_aid_front:build`
+
+`npx cap copy ios`
+
+`npx cap open ios`
+
 Builds is in `Angular/ios` or `Angular/android`
 
 For more information: https://capacitor.ionicframework.com/docs/getting-started#adding-capacitor-to-an-existing-ionic-app
