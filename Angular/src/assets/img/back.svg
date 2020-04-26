@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+    <g fill="none" fill-rule="evenodd">
+        <path stroke="#4A4A4A" stroke-linecap="round" stroke-width="5.4" d="M6 0L14.69 8.602 6.153 17.053" transform="translate(16 15) matrix(-1 0 0 1 20.69 0)"/>
+        <text fill="#4A4A4A" font-family="Rubik-Medium, Rubik" font-size="10" font-weight="400" transform="translate(16 15)">
+            <tspan x=".52" y="31">Back</tspan>
+        </text>
+    </g>
+</svg>

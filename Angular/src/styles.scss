@@ -1,7 +1,51 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
-$mdc-typography-font-family: unquote("Roboto, sans-serif");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500|Heebo:400,700,900|Rubik&effect=3d');
+
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 $mdc-theme-primary: #bfe5b5;
 
 
+html, body {
+    background-color: #f2f1f6 !important;
+    overflow: hidden;
+    -webkit-touch-callout: none; /* Disables long-touch menu */
+    -webkit-user-select: none; /* Disable text selection (for Webkit) */
+    user-select: none; /* Disable text selection (standard syntax) */
+  }
+  
+  input , textarea {
+    -webkit-touch-callout: default;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+html {
+    height: 100%;
+    width: 100%;
+
+}
+
+.mat-card {
+    box-shadow: none !important;
+}
+
+// .mat-form-field-infix {
+//     border-top: 0.3em solid transparent !important;
+// }
+
+.mat-option-text {
+    text-align: center !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-suffix {
+    top: -0.25em !important;
+    font-weight: bold;
+}
+
+.mat-fab .mat-button-wrapper {
+    padding: 0 !important;
+}
+
+.mat-fab.mat-accent {
+    background-color: transparent !important;
+}

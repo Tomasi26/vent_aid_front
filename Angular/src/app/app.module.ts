@@ -21,6 +21,8 @@ import {SharedModule} from './shared/shared.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {ConfigModule} from './config/config.module';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,7 @@ import {ConfigModule} from './config/config.module';
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),
+    FlexLayoutModule
   ],
   bootstrap: [AppComponent]
 })

@@ -2,19 +2,19 @@ import {VentMode} from './dashboard.enums';
 
 export const DASHBOARD_STORE_KEY = 'dashboard';
 export const TIDAL_VOLUME_DATA = {
-  name: 'Tidal volume (mL)',
+  name: 'Tidal volume (tV)',
   min: 300,
   max: 800,
   interval: 50
 };
 export const PEAK_FLOW_DATA = {
-  name: 'Peak Flow (L/min)',
+  name: 'Peak Flow',
   min: 40,
   max: 50,
   interval: 5
 };
 export const IE_RATIO_DATA = {
-  name: 'I/E ratio',
+  name: 'I:E',
   min: 0,
   max: 1,
   interval: 0.2
@@ -23,19 +23,19 @@ export const FIO2_DATA = {
   name: 'FiO2',
 };
 export const TRIGGER_DATA = {
-  name: 'Trigger (cmH2O)',
+  name: 'Trigger',
   min: 1,
   max: 10,
   interval: 1
 };
 export const INSPIRATORY_PRESSURE_DATA = {
-  name: 'Inspiratory Pressure (cmH2O)',
+  name: 'Inspiratory Pressure',
   min: 10,
   max: 60,
   interval: 5
 };
 export const RATE_DATA = {
-  name: 'Rate (breaths/min)',
+  name: 'Respiratory Rate',
   min: 8,
   max: 30,
   interval: 1

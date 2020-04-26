@@ -1,3 +1,5 @@
-<app-header></app-header>
+<div style="height:100%; background-color: #f2f1f6;" fxLayout="column" fxLayoutAlign="center stretch" fxLayoutAlign.gt-xs="center center">
+    <app-header [ngStyle]="{'visibility': true ? 'visible' : 'hidden'}"></app-header>
+    <router-outlet fxFill.gt-xs></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
