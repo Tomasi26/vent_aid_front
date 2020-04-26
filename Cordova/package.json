@@ -23,7 +23,8 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-bluetoothle": {}
     },
     "platforms": [
       "ios",

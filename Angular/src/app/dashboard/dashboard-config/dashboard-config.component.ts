@@ -305,6 +305,8 @@ export class DashboardConfigComponent implements OnInit, AfterViewInit, AfterCon
 
     // here you can use the mode and the values of the form
     console.log(this.dashboardConfigForm.value);
+    this.router.navigate(['/admin', 'dashboard', 'panel']);
+
   }
 
   onChange(event) {

@@ -1,1 +1,10 @@
 $mdc-theme-primary: #bfe5b5;
+
+app-header {
+    max-width: 600px;
+    width: 100%;
+}
+::ng-deep app-dashboard {
+    max-width: 600px;
+    width: 100%;
+}
