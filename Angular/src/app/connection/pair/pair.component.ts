@@ -10,6 +10,9 @@ import * as fromConnectionState from '../../connection/store/connection.state';
 import * as fromConnectionActions from '../../connection/store/connection.actions';
 import * as fromConnectionSelectors from '../../connection/store/connection.selectors';
 import {Device} from '../models/device.model';
+import {BleScanService} from '../../bluetooth-services/ble-scan.service';
+import {BleConnectService} from '../../bluetooth-services/ble-connect.service';
+
 
 @Component({
   selector: 'app-login',
@@ -32,11 +35,17 @@ export class PairComponent implements OnInit, AfterViewInit, AfterContentInit, O
   connectionErrorSub: Subscription;
   connectionSuccessSub: Subscription;
 
+  services: any[];
+  connectedDevice: string;
+  isConnected: boolean = false;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private store: Store<fromApp.AppState>,
-    private connectionStore: Store<fromConnectionState.ConnectionState>) {}
+    private connectionStore: Store<fromConnectionState.ConnectionState>,
+    private bleScanService: BleScanService,
+    private bleConnectService: BleConnectService) {}
 
   ngOnInit() {
     // subscribe to vent output state
@@ -126,5 +135,34 @@ export class PairComponent implements OnInit, AfterViewInit, AfterContentInit, O
     this.unsubscribeConnectionStateObservables();
   }
 
+  onBluetooth(){
+    this.bleScanService.foundDevicesSubject.subscribe((deveices) => {
+      console.log(deveices);
+      deveices.map((val) => {
+        return new Device(null,val.address,val.advertisement,val.name,val.rssi);
+      }).forEach(d => this.optionalDevices.push(d))
+    });
+    this.bleScanService.init();
+  }
+
+  onStartScan(){
+    this.isConnected = false;
+    this.bleScanService.startScan();
+  }
+
+  onStopScan(){
+    this.bleScanService.stopScan();
+  }
+  onDisconnect(){
+    this.bleConnectService.disconnect(this.connectedDevice);
+    this.connectedDevice = '';
+  }
+
+  onConnect(device: Device){
+    this.bleConnectService.foundServicesSubject.subscribe((services)=>{console.log(services)});
+    this.bleConnectService.connect(device.address);
+    this.connectedDevice = device.address;
+    this.isConnected = true;
+  }
 
 }
