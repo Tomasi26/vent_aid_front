@@ -50,6 +50,7 @@ Cordova/platforms
 Angular/ios
 Angular/android
 Angular/www/*
+Angular/.gradle
 
 # Angular
 Angular/node_modules
