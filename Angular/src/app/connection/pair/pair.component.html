@@ -2,4 +2,25 @@
 
   <h1>Pair Page!</h1>
 
+
+  <div class="row">
+    <button class="col-3" (click)="onBluetooth()">BLUETOOTH</button>
+    <button class="col-3" (click)="onStartScan()">SCAN</button>
+    <button class="col-3" (click)="onStopScan()">STOP</button>
+    <button class="col-3" (click)="onDisconnect()">Disconnect</button>
+  </div>
+  <div *ngIf="!this.isConnected" class="row">Devices:
+    <div class="row" *ngFor="let d of this.optionalDevices">
+      <mat-label class="col-8">{{d.name}} (MAC: {{d.address}})</mat-label>
+      <button class="col-4" (click)="this.onConnect(d)">
+        connect
+      </button>
+    </div>
+  </div>
+  <div *ngIf="this.isConnected" class="row">Services:
+    <div class="row" *ngFor="let s of this.services">
+      <mat-label class="col-8">{{s.uuid}}</mat-label>
+    </div>
+  </div>
+
 </div>

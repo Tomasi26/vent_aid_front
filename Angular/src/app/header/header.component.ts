@@ -1,4 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,15 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
 
   }
 
   ngOnDestroy(): void {}
+
+  navigateToConnections(){
+    this.router.navigate(['/connection']);
+  }
 }

@@ -38,7 +38,7 @@ export class ConnectionGuard implements CanActivate {
       }),
       map(device => {
         const isConnect = !!device;
-        if (isConnect) {
+        if (!isConnect) {
           return true;
         }
         return this.router.createUrlTree(['/admin/dashboard']);

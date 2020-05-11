@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Debugging Android app
+
+To run live reloading on capacitor app for Android follow the steps below:
+1. `ng run vent_aid_front:build && npx cap copy android && npx cap open android` 
+(or use the script in package.json).
+2. Change the `url` member of node `server: {}` at `capacitor.config.json` to your ip.
+3. Run the app from Android Studio to your connected device.
+4. Also, run the app locally with you ip as host `ng serve --host='your_ip' --port='prot'`
+5. Open Chrome -> navigate to [chrome://inspect/#devices](chrome://inspect/#devices) -> check that `Discover USB devices` is enabled 
+and click `port forwarding` -> create a port forwarding rule.
+6. Now Chrome should recognize your device and app -> click `inspec` and a new window will open with live reloading.
+
