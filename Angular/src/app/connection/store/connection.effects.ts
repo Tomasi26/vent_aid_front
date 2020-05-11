@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, ofType, Effect } from '@ngrx/effects';
-import { switchMap, catchError, map, tap } from 'rxjs/operators';
+import {switchMap, catchError, map, tap, skip, takeUntil} from 'rxjs/operators';
 import {of, throwError} from 'rxjs';
 import _ from 'lodash';
 
@@ -10,8 +10,9 @@ import {Store} from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
 import {Message} from '../../messages/message.model';
 import {MessageType} from '../../messages/message-type.enum';
+import {BleScanService} from '../../bluetooth-services/ble-scan.service';
+import {BleConnectService} from '../../bluetooth-services/ble-connect.service';
 import {ConnectionService} from '../service/connection.service';
-import {Device} from '../models/device.model';
 
 @Injectable()
 export class ConnectionEffects {
@@ -20,13 +21,14 @@ export class ConnectionEffects {
   scan = this.actions$.pipe(
     ofType(ConnectionActions.SCAN_START),
     switchMap((scanAction: ConnectionActions.ScanStart) => {
-      return this.connectionService
-        .bluetoothScan({})
+      console.log('scan start effect');
+      return this.bleScanService.startScan()
         .pipe(
-          map(scanResponse => {
-            if (scanResponse.devices) {
+          skip(1),
+          map(devices => {
+            if (devices) {
               return new ConnectionActions.ScanSuccess({
-                optionalDevices: scanResponse.devices,
+                optionalDevices: devices,
                 successMessage: new Message(ConnectionActions.SCAN_START, MessageType.SUCCESS, {
                   defaultMessage: 'Scan Successful!'
                 })
@@ -88,6 +90,8 @@ export class ConnectionEffects {
     private store: Store<fromApp.AppState>,
     private actions$: Actions,
     private router: Router,
-    private connectionService: ConnectionService
+    private connectionService: ConnectionService,
+    private bleScanService: BleScanService,
+    private bleConnectService: BleConnectService
   ) {}
 }

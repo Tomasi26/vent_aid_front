@@ -1,0 +1,11 @@
+{
+  "f": "flow",// sensor
+  "p": "pressure",// sensor
+
+  "r": "rate",// control
+  "cp": "compressionPercentage",// control
+  "mxp": "maxPressure",// control
+  "ie":"ieRatio",// control
+
+  "err": "error"// alarm
+}
