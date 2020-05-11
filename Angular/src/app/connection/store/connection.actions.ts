@@ -18,7 +18,7 @@ export const UNPAIR_SUCCESS = '[Connection] UnPair Success';
 export const UNPAIR_FAILURE = '[Connection] UnPair Failure';
 
 // auto pairing
-export const AUTO_PAIRING = '[Connection] Auto Login';
+export const AUTO_PAIRING = '[Connection] Auto Pairing';
 
 // clear
 export const CLEAR = '[Connection] Dummy';

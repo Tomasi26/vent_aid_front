@@ -12,6 +12,7 @@ import * as fromConnectionSelectors from '../../connection/store/connection.sele
 import {Device} from '../models/device.model';
 import {BleScanService} from '../../bluetooth-services/ble-scan.service';
 import {BleConnectService} from '../../bluetooth-services/ble-connect.service';
+import {ScanStart} from '../../connection/store/connection.actions';
 
 
 @Component({
@@ -146,8 +147,9 @@ export class PairComponent implements OnInit, AfterViewInit, AfterContentInit, O
   }
 
   onStartScan(){
-    this.isConnected = false;
-    this.bleScanService.startScan();
+    this.store.dispatch(new ScanStart());
+    // this.isConnected = false;
+    // this.bleScanService.startScan();
   }
 
   onStopScan(){
